@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter Products</title>
+
+	<style type="text/css">
+
+		#ip {
+			margin: 12px 0;
+		}
+		table {
+			border-collapse: collapse;
+		}
+
+		table th {
+			padding: 0 12px;
+			text-align: left;
+		}
+
+		table td {
+			text-align: left;
+    		padding: 0 12px;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		var item=" <table> ";
+					item+="<tr><th>Code <th> Name <th> Quantity <th> UnitPrice <th> RateDiscount <th> DiscountPrice <th> Total </tr> </table>";
+
+		function Myorder() {
+
+			var sl, nam, qty, utp, rdt, dp, total;
+			sl=document.form1.sl.value;
+			nam=document.form1.nam.value;
+			qty=document.form1.qty.value;
+			utp=document.form1.utp.value;
+			rdt=document.form1.rd.value;
+
+			dp = parseFloat(qty) * parseFloat(utp) * parseFloat(rdt);
+
+			total = parseFloat(qty) * parseFloat(utp) - parseFloat(dp);
+
+			item+='<tr><td>'+sl+ "</td><td>"+nam+ "</td><td>" +qty+ "</td><td>" +utp+ "</td><td>"+rdt+"</td><td>" +dp+"</td><td>" +total+'</td></tr>';
+
+			document.getElementById("dis").innerHTML=item;
+
+		}
+
+	</script>
+
+</head>
+<body>
+		<form name="form1">
+	
+			<label>Code</label>
+			
+			<input type="text" name="sl"> <br> 
+			
+			<label>Name</label>
+			<input id="ip" type="text" name="nam"> <br>
+			
+			<label>Quantity</label>
+			<input id="ip" type="number" name="qty"> <br>
+			
+			<label>UnitPrice</label>
+			<input id="ip" type="number" name="utp"> <br>
+
+			<label>RateDiscount</label>
+
+			<input type="radio" name="rd" value="0.1"> <label>10%</label>
+			<input type="radio" name="rd" value="0.15"> <label>15%</label>
+			<input type="radio" name="rd" value="0.2"> <label>20%</label> <br>
+
+			<input id="ip" type="button" name="order" value="Order" onclick="Myorder()">
+
+
+			<table border="1" id="dis"> </table>
+
+
+		</form>
+
+</body>
+</html>

@@ -32,22 +32,27 @@
         max=parseFloat(document.getElementById("txtmax").value);
         
         for(var i=0; i<row; i++){
+
           table+="<tr>";
           var random=getRandom(min,max);
           var star=drawStar(random);
+
           if(isPrime(random))
-            table+="<td bgcolor=red>"+random+"<td bgcolor=red>"+star;
+            table+="<td bgcolor=red>"  +random+ "<td bgcolor=red>" +star;
           else
             table+="<td>"+random+"<td>"+star;
         }
         
         document.getElementById("table").innerHTML=table;
       }
+      
     </script>
   </head>
   <body>
     <center>
+
       <h1>Create Table</h1>
+      
       <label>Rows:</label>
       <input type="number" id="txtrow"/> <br>
 
@@ -59,7 +64,7 @@
       <input type="button" onclick="myfunc()" value="Create"/> <br/> <br/>
 
       <div id="table"></div>
-      
+
     </center>
   </body>
 </html>
