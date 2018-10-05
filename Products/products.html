@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Enter Products</title>
-
 	<style type="text/css">
 
-		#ip {
-			margin: 12px 0;
+
+
+		.product{
+		    width: 620px;
+		    padding: 20px 30px;
+		    margin: 0 auto;
+		    border-radius: 20px;
+		    background-color: #ccc;
 		}
+
+		h2{
+			text-align: center;
+			margin: 0 0 20px;
+			padding: 10px 0;
+			border-radius: 6px;
+			background: #fff;
+		}
+
+		#ip {
+			margin-bottom: 12px;
+		}
+
+		input {
+			    padding: 4px 14px;
+    border-radius: 5px;
+		}
+
 		table {
 			border-collapse: collapse;
 		}
@@ -27,7 +51,7 @@
 	<script type="text/javascript">
 
 		var item=" <table> ";
-					item+="<tr><th>Code <th> Name <th> Quantity <th> UnitPrice <th> RateDiscount <th> DiscountPrice <th> Total </tr> </table>";
+			item+="<tr><th>Code <th> Name <th> Quantity <th> UnitPrice <th> RateDiscount <th> DiscountPrice <th> Total </tr> </table>";
 
 		function Myorder() {
 
@@ -52,34 +76,39 @@
 
 </head>
 <body>
-		<form name="form1">
-	
-			<label>Code</label>
+		<div class="product">
+
+			<form name="form1">
+
+				<h2>Product Invoices</h2>
+
+				<label>Code</label>
+				<input id="ip" type="number" name="sl"> <br> 
+
+				<label>Name</label>
+				<input id="ip" type="text" name="nam"> <br>
+
+				<label>Quantity</label>
+				<input id="ip" type="number" name="qty"> <br>
+
+				<label>UnitPrice</label>
+				<input id="ip" type="number" name="utp"> <br>
+
+				<label>RateDiscount</label>
+
+				<input id="ip" type="radio" name="rd" value="0.1"> <label>10%</label>
+				<input id="ip" type="radio" name="rd" value="0.15"> <label>15%</label>
+				<input id="ip" type="radio" name="rd" value="0.2"> <label>20%</label> <br>
+
+				<input type="button" name="order" value="Order" onclick="Myorder()">
+				<input type="reset" name="Clear" value="Clear">
+
+				<table border="1" id="dis"> </table>
+
+
+			</form>
 			
-			<input type="text" name="sl"> <br> 
-			
-			<label>Name</label>
-			<input id="ip" type="text" name="nam"> <br>
-			
-			<label>Quantity</label>
-			<input id="ip" type="number" name="qty"> <br>
-			
-			<label>UnitPrice</label>
-			<input id="ip" type="number" name="utp"> <br>
-
-			<label>RateDiscount</label>
-
-			<input type="radio" name="rd" value="0.1"> <label>10%</label>
-			<input type="radio" name="rd" value="0.15"> <label>15%</label>
-			<input type="radio" name="rd" value="0.2"> <label>20%</label> <br>
-
-			<input id="ip" type="button" name="order" value="Order" onclick="Myorder()">
-
-
-			<table border="1" id="dis"> </table>
-
-
-		</form>
+		</div>
 
 </body>
 </html>
